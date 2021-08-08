@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_item_weight_list">体重</string>
+    <string name="nav_item_fitness">フィットネス</string>
+</resources>

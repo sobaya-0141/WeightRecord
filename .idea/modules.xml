@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeigtRecorder.iml" filepath="$PROJECT_DIR$/.idea/modules/WeigtRecorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WeigtRecorder.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WeigtRecorder.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/list/WeigtRecorder.list.iml" filepath="$PROJECT_DIR$/.idea/modules/list/WeigtRecorder.list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/main/WeigtRecorder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/main/WeigtRecorder.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/record/WeigtRecorder.record.iml" filepath="$PROJECT_DIR$/.idea/modules/record/WeigtRecorder.record.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/repository/WeigtRecorder.repository.iml" filepath="$PROJECT_DIR$/.idea/modules/repository/WeigtRecorder.repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/resources/WeigtRecorder.resources.iml" filepath="$PROJECT_DIR$/.idea/modules/resources/WeigtRecorder.resources.iml" />
+    </modules>
+  </component>
+</project>
