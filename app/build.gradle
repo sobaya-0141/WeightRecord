@@ -44,6 +44,9 @@ android {
 
 dependencies {
     implementation project(':main')
+    implementation project(':weight_list')
+    implementation project(':fitness_list')
+
     implementation project(':resources')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"

@@ -27,9 +27,18 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.0.1"
+    }
 }
 
 dependencies {
+    implementation project(':weight_list')
+    implementation project(':fitness_list')
+
     implementation project(':resources')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.21"
