@@ -4,10 +4,12 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Done
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -34,7 +36,7 @@ fun Main() {
                 val currentDestination = navBackStackEntry?.destination
                 items.forEach { screen ->
                     BottomNavigationItem(
-                        icon = { Icon(Icons.Filled.Favorite, contentDescription = null) },
+                        icon = { Icon(screen.icon, contentDescription = null) },
                         label = { Text(stringResource(screen.resourceId)) },
                         selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
                         onClick = {
@@ -58,7 +60,7 @@ fun Main() {
     }
 }
 
-sealed class Screen(val route: String, @StringRes val resourceId: Int) {
-    object WeightList : Screen("weightList", sobaya.app.resources.R.string.nav_item_weight_list)
-    object FitnessList : Screen("fitnessList", sobaya.app.resources.R.string.nav_item_fitness)
+sealed class Screen(val route: String, @StringRes val resourceId: Int, val icon: ImageVector) {
+    object WeightList : Screen("weightList", sobaya.app.resources.R.string.nav_item_weight_list, Icons.Filled.DateRange)
+    object FitnessList : Screen("fitnessList", sobaya.app.resources.R.string.nav_item_fitness, Icons.Filled.Done)
 }

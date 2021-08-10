@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeigtRecorder.iml" filepath="$PROJECT_DIR$/.idea/modules/WeigtRecorder.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/WeigtRecorder.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/WeigtRecorder.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/database/WeigtRecorder.database.iml" filepath="$PROJECT_DIR$/.idea/modules/database/WeigtRecorder.database.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fitness_list/WeigtRecorder.fitness_list.iml" filepath="$PROJECT_DIR$/.idea/modules/fitness_list/WeigtRecorder.fitness_list.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/list/WeigtRecorder.list.iml" filepath="$PROJECT_DIR$/.idea/modules/list/WeigtRecorder.list.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/main/WeigtRecorder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/main/WeigtRecorder.main.iml" />

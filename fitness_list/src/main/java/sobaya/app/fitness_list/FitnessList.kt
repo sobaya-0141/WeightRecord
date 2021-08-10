@@ -7,12 +7,12 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun fitnessList(navController: NavController) {
+fun FitnessList(navController: NavController) {
     Text("運動の一覧")
 }
 
 @Composable
 @Preview
-fun fitnessListPreview() {
-    fitnessList(navController = rememberNavController())
+fun FitnessListPreview() {
+    FitnessList(navController = rememberNavController())
 }
