@@ -1,6 +1,9 @@
 package sobaya.app.weight_list
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
@@ -12,15 +15,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.fragment.app.FragmentOnAttachListener
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
 import sobaya.app.database.entity.Weight
-import androidx.compose.runtime.remember
-import androidx.compose.ui.tooling.preview.Preview
 import sobaya.app.weight_list.add_weight.AddWeightDialog
+
 
 @Composable
 fun WeightList(navController: NavController) {
@@ -37,8 +46,10 @@ private fun DailyWeightList(viewModel: WeightListViewModel) {
         modifier = Modifier.fillMaxWidth(),
         content = {
             LazyColumn {
-                item {
-                    WeightLineChart(dailyWeightData = dailyWeightData)
+                if (dailyWeightData.isNotEmpty()) {
+                    item {
+                        WeightLineChart(dailyWeightData = dailyWeightData)
+                    }
                 }
 
                 dailyWeightData.forEach { weight ->
@@ -52,13 +63,46 @@ private fun DailyWeightList(viewModel: WeightListViewModel) {
     )
 }
 
+private fun makeChartData(dailyWeightData: List<Weight>): LineData {
+    val values = ArrayList<Entry>(dailyWeightData.size)
+    val lineDataSet = LineDataSet(values, "体重")
+
+    dailyWeightData.forEachIndexed { index, weight ->
+        values.add(Entry(index.toFloat(), weight.weight))
+    }
+    lineDataSet.values = values
+
+    return LineData(lineDataSet)
+}
+
 @Composable
 private fun WeightLineChart(dailyWeightData: List<Weight>) {
     AndroidView(
         factory = { context ->
-            LineChart(context)
-        }
+            LineChart(context).apply {
+                setupChart(this)
+                if (dailyWeightData.isNotEmpty()) {
+                    data = makeChartData(dailyWeightData)
+                    data.notifyDataChanged()
+                    notifyDataSetChanged()
+                }
+            }
+        },
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
     )
+}
+
+private fun setupChart(chart: LineChart) {
+    chart.description.isEnabled = false
+    chart.setTouchEnabled(false)
+    chart.isDragEnabled = false
+    chart.setScaleEnabled(false)
+    chart.setPinchZoom(false)
+    val yAxis = chart.axisLeft
+    yAxis.mAxisMaximum = 200f
+    yAxis.mAxisMinimum = 0f
 }
 
 @Composable
