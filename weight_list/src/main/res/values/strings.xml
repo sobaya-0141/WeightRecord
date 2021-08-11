@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_weight_dialog_title">体重の追加</string>
+    <string name="add_weight_dialog_text">現在の体重</string>
+    <string name="add_weight_dialog_weight_hint">現在の体重</string>
+</resources>
