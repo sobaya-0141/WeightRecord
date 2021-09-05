@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.accompanist:accompanist-insets:0.16.0@aar">
     <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/02a60669f595169d964e9f9a25b6e3e0/transformed/jetified-accompanist-insets-0.16.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0d97adc0cab644c759b50db6b03a61a1/transformed/jetified-accompanist-insets-0.16.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0d97adc0cab644c759b50db6b03a61a1/transformed/jetified-accompanist-insets-0.16.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0d97adc0cab644c759b50db6b03a61a1/transformed/jetified-accompanist-insets-0.16.0/AndroidManifest.xml" />
